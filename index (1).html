@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riya Waghare | Cybersecurity & GRC</title>
+<meta name="description" content="Riya Bhedraj Waghare — Cybersecurity student focused on GRC, network security, ethical hacking and digital forensics.">
+<meta property="og:title" content="Riya Waghare | Cybersecurity & GRC">
+<meta property="og:description" content="Cybersecurity student focused on GRC, network security, ethical hacking and digital forensics.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b1220'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%2322d3ee' font-family='monospace' font-weight='bold'>RW</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14; --bg2:#0b1220; --card:#0f172a; --card2:#111c33;
+  --line:#1e2b45; --text:#e2e8f0; --muted:#94a3b8; --dim:#64748b;
+  --accent:#22d3ee; --accent2:#a78bfa; --ok:#34d399;
+  --mono:'JetBrains Mono',ui-monospace,monospace; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#000}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background-image:linear-gradient(rgba(34,211,238,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.04) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse at top,#000 30%,transparent 75%)}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(120px);opacity:.18;z-index:-1;pointer-events:none}
+.g1{background:var(--accent);top:-160px;right:-120px}.g2{background:var(--accent2);bottom:-200px;left:-160px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,11,20,.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--mono);font-weight:700;color:var(--accent)}
+.logo span{color:var(--muted)}
+.links{display:flex;gap:28px;list-style:none}
+.links a{font-size:.9rem;color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--accent)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font-family:var(--mono);cursor:pointer}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:64px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:48px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--ok);border:1px solid rgba(52,211,153,.3);background:rgba(52,211,153,.07);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:var(--mono);color:var(--accent);margin:16px 0 18px;font-size:1.05rem;min-height:1.6em}
+.cursor{display:inline-block;width:9px;background:var(--accent);margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--muted);max-width:560px;font-size:1.05rem}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-p{background:var(--accent);color:#04121a}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(34,211,238,.3)}
+.btn-o{border:1px solid var(--line);color:var(--text)}
+.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.socials{display:flex;gap:12px;margin-top:28px}
+.socials a{width:42px;height:42px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:all .2s}
+.socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.socials svg{width:19px;height:19px}
+
+.term{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.term-bar{display:flex;gap:7px;padding:12px 14px;background:var(--bg2);border-bottom:1px solid var(--line);align-items:center}
+.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term-bar b{margin-left:auto;font-family:var(--mono);font-size:.72rem;color:var(--dim);font-weight:400}
+.term-body{padding:20px;font-family:var(--mono);font-size:.82rem;line-height:1.85}
+.p{color:var(--ok)}.k{color:var(--accent2)}.v{color:var(--text)}.c{color:var(--dim)}.s{color:#fbbf24}
+
+/* sections */
+section{padding:96px 0}
+.head{margin-bottom:44px}
+.head .num{font-family:var(--mono);color:var(--accent);font-size:.85rem}
+.head h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:700;letter-spacing:-.01em;margin-top:4px}
+.head p{color:var(--muted);margin-top:8px;max-width:620px}
+.card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:14px;padding:26px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:rgba(34,211,238,.45);transform:translateY(-3px)}
+
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+.about-grid strong{color:var(--text);font-weight:600}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{text-align:center;padding:22px 12px}
+.stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--accent)}
+.stat span{font-size:.82rem;color:var(--muted)}
+
+.edu{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+.edu h3{font-size:1.15rem}
+.edu p{color:var(--muted)}
+.pill{font-family:var(--mono);font-size:.78rem;color:var(--accent);border:1px solid rgba(34,211,238,.3);background:rgba(34,211,238,.07);padding:5px 12px;border-radius:999px;white-space:nowrap}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card h3{font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ico{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:rgba(34,211,238,.1);color:var(--accent);flex-shrink:0}
+.ico svg{width:19px;height:19px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.78rem;padding:6px 11px;border-radius:7px;background:var(--card2);border:1px solid var(--line);color:var(--text)}
+
+.grc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grc p{color:var(--muted);font-size:.93rem}
+.grc .fw{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{display:flex;flex-direction:column}
+.proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.proj .top .ico{width:44px;height:44px}
+.proj .top .ico svg{width:22px;height:22px}
+.proj .type{font-family:var(--mono);font-size:.72rem;color:var(--accent2)}
+.proj h3{display:block;font-size:1.15rem;margin-bottom:10px}
+.proj ul{list-style:none;color:var(--muted);font-size:.9rem;flex:1}
+.proj li{padding-left:18px;position:relative;margin-bottom:8px}
+.proj li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+.proj .chips{margin-top:16px}
+.proj .chip{font-size:.7rem;padding:4px 9px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cert{display:flex;gap:16px;align-items:flex-start}
+.cert h4{font-size:1rem}
+.cert p{color:var(--muted);font-size:.88rem}
+.list{display:flex;flex-direction:column;gap:16px}
+
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
+.tl{position:relative;margin-bottom:22px}
+.tl::before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl .when{font-family:var(--mono);font-size:.75rem;color:var(--accent)}
+.tl h4{font-size:1rem;margin:2px 0}
+.tl p{color:var(--muted);font-size:.9rem}
+
+.ach{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.ach .big{font-size:1.5rem;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ach h4{margin:6px 0 6px}
+.ach p{color:var(--muted);font-size:.9rem}
+.ach .when{font-family:var(--mono);font-size:.75rem;color:var(--dim);margin-top:12px;display:block}
+
+.contact{text-align:center;max-width:640px;margin:0 auto}
+.contact .head p{margin-left:auto;margin-right:auto}
+.contact-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.contact-links a{padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);word-break:break-word}
+.contact-links a:hover{color:var(--accent)}
+.contact-links svg{width:24px;height:24px;color:var(--accent)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-family:var(--mono);font-size:.8rem;color:var(--dim)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid,.about-grid,.two{grid-template-columns:1fr}
+  .skills,.grc,.projects,.ach{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .wrap{padding:0 16px}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links a{display:block;padding:14px 20px;border-top:1px solid var(--line)}
+  .menu-btn{display:block}
+  .skills,.grc,.projects,.ach,.contact-links{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .hero{padding-top:96px;padding-bottom:40px}
+  .term-body{font-size:.74rem;padding:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">riya<span>@</span>sec<span>:~$</span></a>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">menu</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag"><span class="dot"></span>Open to Cybersecurity / GRC internships</div>
+      <h1>Hi, I'm <span class="grad">Riya Waghare</span></h1>
+      <div class="role"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+      <p class="lead">Cybersecurity student passionate about understanding system vulnerabilities, risk mitigation, and security control frameworks — bridging hands-on offensive skills with Governance, Risk &amp; Compliance.</p>
+      <div class="btns">
+        <a href="#projects" class="btn btn-p">View my work →</a>
+        <a href="resume.pdf" class="btn btn-o" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/riyawaghare-ltmg" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+        <a href="https://linkedin.com/in/riya-waghare-010202331" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
+        <a href="mailto:riyawaghare20@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="term reveal">
+      <div class="term-bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#34d399"></i><b>whoami.sh</b></div>
+      <div class="term-body">
+        <div><span class="p">riya@sec</span>:<span class="k">~</span>$ whoami</div>
+        <div class="v">Riya Bhedraj Waghare</div>
+        <div><span class="p">riya@sec</span>:<span class="k">~</span>$ cat profile.json</div>
+        <div class="v">{</div>
+        <div>&nbsp;&nbsp;<span class="k">"degree"</span>: <span class="s">"B.Tech Cyber Security"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="k">"college"</span>: <span class="s">"SVPCET, Nagpur"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="k">"focus"</span>: [<span class="s">"GRC"</span>, <span class="s">"NetSec"</span>, <span class="s">"Forensics"</span>],</div>
+        <div>&nbsp;&nbsp;<span class="k">"frameworks"</span>: [<span class="s">"ISO 27001"</span>, <span class="s">"NIST CSF"</span>],</div>
+        <div>&nbsp;&nbsp;<span class="k">"certs"</span>: [<span class="s">"APIsec CP"</span>, <span class="s">"CCNA"</span>]</div>
+        <div class="v">}</div>
+        <div><span class="p">riya@sec</span>:<span class="k">~</span>$ <span class="c"># ready to secure things</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="head reveal"><div class="num">01 /</div><h2>About Me</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a <strong>Cybersecurity undergraduate</strong> at St Vincent Pallotti College of Engineering &amp; Technology, Nagpur, with a strong interest in <strong>network security, ethical hacking, digital forensics</strong>, and <strong>Information Security Governance, Risk &amp; Compliance (GRC)</strong>.</p>
+        <p>I enjoy looking at security from both sides — breaking systems to understand how they fail, and building the policies, controls and risk processes that keep organisations safe. My work spans phishing detection, Windows forensic correlation and mobile fraud monitoring.</p>
+        <p>I'm currently looking for a <strong>Cybersecurity / GRC internship</strong> where I can contribute to a security-focused team and keep learning.</p>
+        <div class="card edu" style="margin-top:22px">
+          <div>
+            <h3>B.Tech in Cyber Security</h3>
+            <p>St Vincent Pallotti College of Engineering &amp; Technology, Nagpur</p>
+            <p style="font-size:.88rem;margin-top:4px">CGPA: <strong>7.57</strong> (up to 4th semester)</p>
+          </div>
+          <span class="pill">2024 – 2028</span>
+        </div>
+      </div>
+      <div class="stats reveal">
+        <div class="card stat"><b>3</b><span>Security projects</span></div>
+        <div class="card stat"><b>2nd</b><span>Dark Nexus CTF by Hacklido</span></div>
+        <div class="card stat"><b>2</b><span>Certifications</span></div>
+        <div class="card stat"><b>3</b><span>National hackathons</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head reveal"><div class="num">02 /</div><h2>Technical Skills</h2><p>The languages, tools and platforms I use for assessment, analysis and building.</p></div>
+    <div class="skills">
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>Programming</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++ (DSA)</span></div>
+      </div>
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>Offensive &amp; VAPT</h3>
+        <div class="chips"><span class="chip">Burp Suite</span><span class="chip">Metasploit</span><span class="chip">SQLmap</span><span class="chip">Nikto</span><span class="chip">Nessus</span><span class="chip">John the Ripper</span></div>
+      </div>
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>Network Security</h3>
+        <div class="chips"><span class="chip">Wireshark</span><span class="chip">Nmap</span><span class="chip">CCNA Networking</span><span class="chip">Traffic Analysis</span></div>
+      </div>
+    </div>
+
+    <div class="head reveal" style="margin-top:64px"><div class="num">03 /</div><h2>Governance, Risk &amp; Compliance</h2><p>Turning security into structure — controls, risk and audit readiness.</p></div>
+    <div class="grc">
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15ZM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></span>Frameworks &amp; Standards</h3>
+        <p>Practical understanding of core principles in ISO/IEC 27001 and the NIST Cybersecurity Framework, including security controls, governance and risk management.</p>
+        <div class="fw"><span class="chip">ISO/IEC 27001</span><span class="chip">NIST CSF</span></div>
+      </div>
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg></span>Risk &amp; Compliance Analysis</h3>
+        <p>Hands-on simulated security risk assessments and analysis of regulatory / IT compliance requirements through targeted TryHackMe GRC modules and labs.</p>
+        <div class="fw"><span class="chip">Risk Assessment</span><span class="chip">Compliance</span></div>
+      </div>
+      <div class="card reveal">
+        <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span>Audit &amp; Documentation</h3>
+        <p>Familiar with security audit lifecycles, writing security policies and standard operating procedures, and drafting risk mitigation reports.</p>
+        <div class="fw"><span class="chip">Policies</span><span class="chip">SOPs</span><span class="chip">Audit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head reveal"><div class="num">04 /</div><h2>Projects</h2><p>Security tools I've built across threat detection, forensics and fraud prevention.</p></div>
+    <div class="projects">
+      <div class="card proj reveal">
+        <div class="top"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><span class="type">Threat Detection</span></div>
+        <h3>Phishield — Scam URL Detector</h3>
+        <ul>
+          <li>Phishing detection system that identifies malicious URLs and emails using pattern analysis and threat indicators.</li>
+          <li>Classification logic based on URL structure, keywords and domain behaviour.</li>
+          <li>Flags suspicious links in real time to raise user awareness and reduce risk.</li>
+        </ul>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Phishing</span><span class="chip">Threat Intel</span></div>
+      </div>
+      <div class="card proj reveal">
+        <div class="top"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span><span class="type">Digital Forensics</span></div>
+        <h3>Windows Artifact Correlation Engine</h3>
+        <ul>
+          <li>Analyses and links event logs, registry entries and file activity for forensic investigation.</li>
+          <li>Reconstructs activity timelines across multiple artifact sources.</li>
+          <li>Automates extraction, normalisation and cross-referencing for faster incident response.</li>
+        </ul>
+        <div class="chips"><span class="chip">DFIR</span><span class="chip">Event Logs</span><span class="chip">Registry</span></div>
+      </div>
+      <div class="card proj reveal">
+        <div class="top"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><span class="type">Mobile Security</span></div>
+        <h3>BharatShield — Fraud SMS &amp; Call Tracker</h3>
+        <ul>
+          <li>Android app for digital evidence collection and real-time security monitoring.</li>
+          <li>Tracks incoming SMS and call activity to flag scam indicators.</li>
+          <li>Generates real-time alerts and keeps detailed logs for structured analysis.</li>
+        </ul>
+        <div class="chips"><span class="chip">Android</span><span class="chip">Fraud Detection</span><span class="chip">Monitoring</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <div class="head reveal"><div class="num">05 /</div><h2>Certifications</h2></div>
+        <div class="list">
+          <div class="card cert reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div><h4>APIsec Certified Practitioner</h4><p>APIsec University</p></div></div>
+          <div class="card cert reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span><div><h4>CCNA</h4><p>Cisco Networking Academy</p></div></div>
+          <div class="card cert reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m13 2-10 12h9l-1 8 10-12h-9z"/></svg></span><div><h4>TryHackMe</h4><p>Active solver of daily machines; completed structured learning paths including GRC &amp; security operations labs.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="head reveal"><div class="num">06 /</div><h2>Leadership</h2></div>
+        <div class="timeline reveal">
+          <div class="tl"><span class="when">Sept 2026</span><h4>Web3 Hackathon Coordinator — Cyberpunk 4.0</h4><p>SVPCET, Nagpur — managed technical track coordination and venue setup.</p></div>
+          <div class="tl"><span class="when">Feb 2026</span><h4>EncipherX 4.0 — Deployment &amp; Documentation Team</h4><p>Coordinated deployment activities and execution.</p></div>
+          <div class="tl"><span class="when">Ongoing</span><h4>Phoenix Cybersecurity Forum</h4><p>Active member contributing to student cybersecurity awareness and labs.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="head reveal"><div class="num">07 /</div><h2>Achievements</h2></div>
+    <div class="ach">
+      <div class="card reveal"><div class="big">2nd Rank</div><h4>Dark Nexus CTF</h4><p>Secured 2nd rank in the Dark Nexus Capture The Flag competition conducted by Hacklido.</p><span class="when">October 2026</span></div>
+      <div class="card reveal"><div class="big">Top 15</div><h4>ACN — National Level CTF</h4><p>Ranked in the top 15 teams out of 200+ competing teams nationwide.</p><span class="when">September 2025</span></div>
+      <div class="card reveal"><div class="big">Round 2</div><h4>CIPATHON 26</h4><p>Shortlisted for Round 2 of the National Level Cyber Security Hackathon at MIT-WPU, Pune.</p><span class="when">March 2026</span></div>
+      <div class="card reveal"><div class="big">Round 2</div><h4>Idea3 Hackathon</h4><p>Shortlisted for Round 2, solving real-world industrial challenges from TCS, Infosys and HCL.</p><span class="when">July 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="head reveal"><div class="num">08 /</div><h2>Let's Connect</h2><p>I'm actively looking for Cybersecurity and GRC internship opportunities. My inbox is always open.</p></div>
+    <a href="mailto:riyawaghare20@gmail.com" class="btn btn-p reveal">Say hello →</a>
+    <div class="contact-links">
+      <a href="mailto:riyawaghare20@gmail.com" class="card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>riyawaghare20@gmail.com</a>
+      <a href="https://linkedin.com/in/riya-waghare-010202331" target="_blank" rel="noopener" class="card reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>LinkedIn</a>
+      <a href="https://github.com/riyawaghare-ltmg" target="_blank" rel="noopener" class="card reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Riya Bhedraj Waghare · Built with &lt;3 and a lot of coffee</div></footer>
+
+<script>
+// typing effect
+const roles=["Cybersecurity Student","GRC Enthusiast","Ethical Hacker","Digital Forensics Learner"];
+const el=document.getElementById("typed");let r=0,i=0,del=false;
+function tick(){const w=roles[r];el.textContent=w.slice(0,i);
+  if(!del&&i<w.length){i++;setTimeout(tick,80)}
+  else if(!del){del=true;setTimeout(tick,1600)}
+  else if(i>0){i--;setTimeout(tick,40)}
+  else{del=false;r=(r+1)%roles.length;setTimeout(tick,300)}}
+tick();
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(n=>io.observe(n));
+// mobile menu
+const links=document.getElementById("links");
+document.getElementById("menuBtn").onclick=()=>links.classList.toggle("open");
+links.querySelectorAll("a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
